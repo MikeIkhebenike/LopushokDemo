@@ -1,4 +1,4 @@
-namespace LopushokDemo
+namespace LopushokDemo.Properties.DataSources
 {
     using System;
     using System.Collections.Generic;
@@ -6,11 +6,11 @@ namespace LopushokDemo
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Product")]
-    public partial class Product
+    [Table("Material")]
+    public partial class Material
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Material()
         {
             ProductMaterial = new HashSet<ProductMaterial>();
         }
@@ -21,24 +21,26 @@ namespace LopushokDemo
         [StringLength(100)]
         public string Title { get; set; }
 
-        public int? ProductTypeID { get; set; }
+        public int CountInPack { get; set; }
 
         [Required]
         [StringLength(10)]
-        public string ArticleNumber { get; set; }
+        public string Unit { get; set; }
+
+        public double? CountInStock { get; set; }
+
+        public double MinCount { get; set; }
 
         public string Description { get; set; }
+
+        public decimal Cost { get; set; }
 
         [StringLength(100)]
         public string Image { get; set; }
 
-        public int? ProductionPersonCount { get; set; }
+        public int MaterialTypeID { get; set; }
 
-        public int? ProductionWorkshopNumber { get; set; }
-
-        public decimal MinCostForAgent { get; set; }
-
-        public virtual ProductType ProductType { get; set; }
+        public virtual MaterialType MaterialType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }

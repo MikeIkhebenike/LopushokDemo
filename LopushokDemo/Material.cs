@@ -9,6 +9,12 @@ namespace LopushokDemo
     [Table("Material")]
     public partial class Material
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Material()
+        {
+            ProductMaterial = new HashSet<ProductMaterial>();
+        }
+
         public int ID { get; set; }
 
         [Required]
@@ -35,5 +41,8 @@ namespace LopushokDemo
         public int MaterialTypeID { get; set; }
 
         public virtual MaterialType MaterialType { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }
     }
 }

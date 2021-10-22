@@ -82,10 +82,16 @@
     <Compile Include="MaterialType.cs" />
     <Compile Include="Model1.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductMaterial.cs" />
     <Compile Include="ProductType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Properties\DataSources\Material.cs" />
+    <Compile Include="Properties\DataSources\MaterialType.cs" />
+    <Compile Include="Properties\DataSources\Model1.cs" />
+    <Compile Include="Properties\DataSources\Product.cs" />
+    <Compile Include="Properties\DataSources\ProductType.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,6 +107,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Material.datasource" />
+    <None Include="Properties\DataSources\MaterialType.datasource" />
+    <None Include="Properties\DataSources\ProductType.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,6 +117,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Лопушок.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

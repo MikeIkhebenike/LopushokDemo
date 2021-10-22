@@ -1,4 +1,4 @@
-namespace LopushokDemo
+namespace LopushokDemo.Properties.DataSources
 {
     using System;
     using System.Collections.Generic;
